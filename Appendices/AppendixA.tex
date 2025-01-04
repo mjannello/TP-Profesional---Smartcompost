@@ -1,0 +1,179 @@
+% Appendix A
+
+\chapter{Archivos de configuración} % Main appendix title
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+
+\lstdefinelanguage{yaml}{
+  keywords={true,false,null,y,n},
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  literate = 
+   *{=}{{{\color{red}=}}}{1}
+    {>}{{{\color{red}>}}}{1},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{orange},
+  basicstyle=\ttfamily\small,
+  showstringspaces=false
+}
+
+\lstset{
+    backgroundcolor=\color{lightgray!20}, % Color de fondo
+    frame=single, % Cuadro alrededor del código
+    breaklines=true, % Ajuste de línea automático
+    basicstyle=\ttfamily\footnotesize, % Tamaño y tipo de fuente
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange}
+}
+\section{Docker Compose}
+
+\begin{lstlisting}[label=cod:dockercompose,caption=Docker Compose del portal Web de Smartcompst.]  
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/smartcompost.conf:/etc/nginx/nginx.conf
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - frontend
+      - web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  web:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: XXX #private info
+      DB_PASSWORD: XXX #private info
+      DB_NAME: XXX #private info
+      CONFIG_PATH: /app/config/config.yml
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs/web:/var/log/web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: XXX #private info
+      MYSQL_DATABASE: XXX #private info
+      MYSQL_USER: XXX #private info
+      MYSQL_PASSWORD: XXX #private info
+    ports:
+      - "3307:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./logs/mysql:/var/log/mysql
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file: ./frontend/.env.local
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./logs/frontend:/var/log/frontend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  loki:
+    image: grafana/loki:2.8.2
+    ports:
+      - "3100:3100"
+    volumes:
+      - loki-data:/var/loki
+      - ./loki/loki-config.yml:/etc/loki/loki-config.yml
+    command: -config.file=/etc/loki/loki-config.yml
+    networks:
+      - logging
+
+  promtail:
+    image: grafana/promtail:2.8.2
+    volumes:
+      - ./promtail/promtail-config.yml:/etc/promtail/promtail-config.yml
+      - ./logs/nginx:/var/log/nginx
+      - ./logs/web:/var/log/web
+      - ./logs/mysql:/var/log/mysql
+      - ./logs/frontend:/var/log/frontend
+      - /var/lib/docker/containers:/var/lib/docker/containers
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - logging
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "XXX" #our grafana password
+    networks:
+      - logging
+
+volumes:
+  db-data:
+  loki-data:
+  grafana-data:
+
+networks:
+  logging:
+    driver: bridge
+\end{lstlisting}
+
+\section{Configuración Nginx}
+\begin{lstlisting}[label=cod:nginx-config,caption=Configuración reverse proxy nginx.] 
+events {
+}
+http {
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    server {
+        listen 80;
+
+        location / {
+            proxy_pass http://frontend:3000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+}
+
+\end{lstlisting}

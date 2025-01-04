@@ -1,0 +1,63 @@
+% Chapter Template
+
+\chapter{Conclusiones} % Main chapter title
+
+\label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Conclusiones generales }
+
+El trabajo profesional SmartCompost se diseñó con el propósito de desarrollar una solución automatizada y eficiente para el monitoreo de compost orgánico, centrándose en los parámetros clave de temperatura y humedad. Durante las etapas de diseño y prueba, se trabajó minuciosamente en el cumplimiento de los requerimientos funcionales y no funcionales, con el objetivo de crear un sistema que no solo proporcione lecturas precisas y en tiempo real de las variables monitoreadas, sino que también sea autónomo, escalable, robusto y adaptable a una variedad de entornos operativos.
+
+A continuación, se describen en detalle los logros obtenidos como resultado de la implementación.
+
+El monitoreo continuo de la temperatura y humedad en el compost es un aspecto crucial del proyecto, ya que permite observar los cambios que ocurren durante las distintas etapas del compostaje y ajustar de forma eficiente distintos parámetros para minimizar el tiempo total del proceso. 
+Actualmente, esta tarea se realiza manualmente en muchos casos, lo cual puede resultar tedioso, ineficiente y propenso a errores. Con esta solución se automatiza este proceso, proporcionando datos en tiempo real y registrándolos en una base de datos centralizada. Esto permite a los usuarios contar con información fiable y actualizada para optimizar las condiciones de compostaje y obtener un compost de mayor calidad en menos tiempo, como también tener un registro histórico.
+
+Uno de los aspectos centrales del proyecto es la autonomía energética que dispone el Nodo AP. Se diseñó para minimizar la intervención humana y reducir los costos asociados con la alimentación eléctrica en zonas remotas o entornos al aire libre. Por ello el Nodo AP tiene en su diseño un sistema de alimentación basado en baterías y paneles solares. Las pruebas realizadas para verificar la duración de las baterías han sido satisfactorias, lo que garantiza que el proyecto pueda operar de manera continua y sin interrupciones en su totalidad, incluso en condiciones ambientales cambiantes. Esta característica es esencial para la sostenibilidad y eficiencia ya que permite un monitoreo constante sin la preocupación de fallos por falta de energía.
+
+En cuanto a la conectividad y transmisión de datos, el diseño del proyecto aportó una gran flexibilidad  en la integración de diferentes tecnologías de comunicación. Se ha comprobado la eficiencia de la transmisión de datos entre los nodos sensores y el Nodo Access Point. La comunicación, implementada mediante protocolos como LoRa y Wi-Fi, garantiza la transmisión estable y eficiente de los datos. Esta funcionalidad ha sido validada a través de pruebas exhaustivas, demostrando la capacidad del sistema para procesar una medición por nodo por segundo de manera continua y sin interrupciones.
+
+Además, se desarrolló una interfaz de usuario intuitiva y sencilla pensada para facilitar la comprensión de los datos recolectados por los Nodos. Esto permite que cualquier usuario, independientemente de su nivel técnico, pueda interpretar fácilmente la información presentada y tomar decisiones informadas sobre el compost. La interfaz incluye gráficos y mediciones en tiempo real, así como telemetría de cada uno de los Nodos, lo que facilita la supervisión remota y la toma de decisiones en base a datos confiables.
+
+Otro aspecto fundamental del proyecto es su diseño duradero y resistente. Al estar destinado a operar en diversos ambientes, incluyendo exteriores y entornos de compostaje que pueden ser hostiles, el proyecto se diseñó para soportar cambios de temperatura, variaciones de humedad y otros factores externos que puedan afectar su funcionamiento. Cada componente ha sido seleccionado y probado para asegurar su durabilidad, y el sistema en su conjunto ha demostrado ser robusto durante todas las pruebas de campo realizadas. La estructura de los Nodos cuenta con carcasas (cajas estanco) que facilitan su instalación y permiten una fijación segura en distintos entornos, lo que añade una capa de protección y facilita su portabilidad y reubicación cuando sea necesario.
+
+Además de los aspectos ya mencionados, la escalabilidad y flexibilidad del proyecto representan una ventaja significativa. El diseño modular y la compatibilidad con protocolos estándar de comunicación permiten que el proyecto pueda ampliarse con facilidad, integrando nuevos sensores o funcionalidades en el futuro sin necesidad de reestructurar la infraestructura existente. Esto no solo permite que el proyecto crezca con las necesidades del usuario, sino que también asegura que la inversión realizada sea sostenible y adaptable a las nuevas demandas que puedan surgir en el manejo de compost a medida que este proceso evoluciona.
+
+Finalmente, la solución se destaca por su mantenibilidad y facilidad de desarrollo tanto del firmware como del hardware, lo cual es crucial para su funcionalidad a largo plazo. La estructura modular del PCB permite que los componentes puedan ser reemplazados o actualizados sin afectar al resto de los elementos, facilitando tanto las tareas de mantenimiento como las futuras actualizaciones del firmware. Este diseño, sumado a la facilidad de transporte y reubicación de los Nodos, garantiza que SmartCompost pueda adaptarse a distintos entornos y escenarios, lo cual lo convierte en una herramienta versátil y práctica para diversos tipos de usuarios y aplicaciones.
+Por su parte, el firmware posee una arquitectura también modular orientada a objetos, el cual junto con el kernel implementado, permite una gran reutilización de código para una fácil escalabilidad y bajo mantenimiento.
+
+En conclusión, el proyecto SmartCompost cumple de manera satisfactoria con todos los requisitos planteados y representa una solución innovadora para el monitoreo automatizado de compost. Aunque se encuentra en una fase inicial, ha demostrado ser una herramienta confiable y eficiente para la supervisión continua del compost, mejorando significativamente los métodos manuales actuales. La implementación de este proyecto permite a los usuarios optimizar el proceso de compostaje con un mínimo esfuerzo y de manera sostenible, lo que resulta en un compost de mayor calidad y en una práctica de compostaje más efectiva y respetuosa con el medio ambiente. SmartCompost no solo facilita el monitoreo de compost, sino que también promueve una gestión más inteligente de los recursos orgánicos.
+
+% La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
+
+% Algunas preguntas que pueden servir para completar este capítulo:
+
+% \begin{itemize}
+% \item ¿Cuál es el grado de cumplimiento de los requerimientos?
+% \item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
+% \item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
+% \item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
+% \item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
+% \end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+\section{Próximos pasos}
+
+% Acá se indica cómo se podría continuar el trabajo más adelante.
+
+Como próximos pasos se considera esencial contactar a un diseñador industrial. La colaboración con un experto en diseño permitirá desarrollar una estructura más profesional y optimizada que no solo mejore la estética y funcionalidad del proyecto, sino que también facilite su integración en diversos entornos y aplicaciones.
+
+Además, se proyecta la incorporación de nuevos sensores para medir parámetros adicionales, como pH o niveles de gases, lo cual enriquecería las capacidades de monitoreo y análisis de los Nodos Sensores. Estas mejoras podrían abrir el mercado a nuevas aplicaciones, como el monitoreo de procesos en la producción de humus de lombriz y la gestión de parámetros críticos en la agricultura. Expandiendo el proyecto a otros sectores, SmartCompost podría convertirse en una solución versátil para diversos tipos de compostaje y prácticas de cultivo, brindando valor a usuarios tanto domésticos como comerciales.
+
+Como parte de la expansión del proyecto, también se planea la creación de un portal de usuarios donde los clientes puedan visualizar sus datos históricos, obtener recomendaciones basadas en sus registros, y recibir alertas y notificaciones personalizadas. Este portal permitirá a los usuarios gestionar sus dispositivos y acceder a información detallada sobre su compost o cultivos, mejorando así la experiencia de usuario y facilitando la adopción de prácticas más sostenibles y efectivas en la gestión de compost y suelos.
+

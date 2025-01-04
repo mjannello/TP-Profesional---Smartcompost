@@ -1,0 +1,73 @@
+\chapter{Requerimientos} % Main chapter title
+
+\label{Chapter3}
+
+%----------------------------------------------------------------------------------------
+%	SECCIÓN - REQUERIMIENTOS
+%----------------------------------------------------------------------------------------
+
+El desarrollo del proyecto SmartCompost se basó en un conjunto de requerimientos tanto funcionales como no funcionales, para garantizar que el sistema cumpla con las expectativas de rendimiento, facilidad de uso y sostenibilidad en el tiempo. 
+
+\section{Requerimientos Funcionales}
+
+\begin{itemize}
+    \item \textbf{Monitoreo de temperatura y humedad}
+    
+    El sistema debe de monitorear de manera continua las condiciones de temperatura y humedad. Esto permite a los usuarios tomar decisiones informadas sobre el manejo de su compost.
+
+    \item \textbf{Almacenamiento y análisis de datos}
+    
+    El sistema debe ser capaz de almacenar datos recolectados de los sensores  de manera eficiente y segura en una base de datos centralizada. Los datos deben ser almacenados en tiempo real y deben ser accesibles para su posterior análisis.
+
+    \item \textbf{Autosuficiencia}
+    
+    El sistema debe operar de manera autónoma, minimizando la necesidad de intervención manual. Para ello debe contar con baterías recargables o paneles solares que garanticen su funcionamiento continuo.
+
+    \item \textbf{Conectividad y transmisión}
+    
+    El sistema debe permitir la conectividad a través de diferentes protocolos de comunicación para la transmisión de datos, siendo compatible con tecnologías de comunicación inalámbricas como LoRa, WiFi, etc.
+
+    \item \textbf{Interfaz de usuario sencilla}
+    
+    El sistema debe contener un componente para visualizar los datos en tiempo real de cada uno de los dispositivos. Esto incluye no solo las mediciones, sino la telemetría de los nodos. Debe requerir de la menor interacción del usuario para poder comprender la información.
+    
+
+\end{itemize}
+\newpage
+
+\section{Requerimientos No Funcionales}
+\begin{itemize}
+    \item \textbf{Durabilidad y resistencia}
+    
+    El sistema debe estar diseñado para operar en diversas condiciones ambientales y resistir factores externos que puedan afectar su funcionamiento.
+    Debe soportar temperaturas extremas, variaciones de humedad y exposición a entornos hostiles.
+
+    \item \textbf{Rendimiento y confiabilidad}
+    
+    El sistema debe funcionar de manera eficiente y confiable, asegurando la disponibilidad de datos precisos en todo momento.
+    Debe implementar mecanismos de verificación de datos, como \textit{checksums} o validaciones, para asegurar la integridad de la información transmitida y almacenada.
+    El sistema debe ser capaz de operar continuamente durante largos períodos sin interrupciones.
+
+    \item \textbf{Escalabilidad}
+    
+    El sistema debe ser escalable para permitir la adición de nuevos sensores y funcionalidades en el futuro sin necesidad de reestructurar la infraestructura existente.
+    Debe ser posible integrar nuevos dispositivos y sensores mediante protocolos estándar de comunicación sin afectar el rendimiento del sistema actual.
+
+    \item \textbf{Facilidad de desarrollo y pruebas}
+
+    El sistema debe ser fácil de desarrollar, optimizar y depurar. La integración de nuevos módulos no deben devenir en problemas de software ni debe agregar complejidad a la hora de compilar el proyecto. 
+
+    \item \textbf{Portabilidad}
+    
+    El sistema debe ser fácil de transportar y reubicar en diferentes lugares según sea necesario. Para ello todos los componentes del sistema deben ser de tamaño compacto y ligero, facilitando el transporte y la instalación en diferentes ubicaciones.
+    La estructura tiene que incluir soportes o carcasas que faciliten la instalación en diferentes entornos (como interiores o exteriores) y que puedan ser fijados de manera segura.
+    La fuente de alimentación del sistema debe ser flexible, permitiendo su operación con diferentes fuentes de energía, sean baterías, energía solar o conexiones de red eléctrica.
+
+    \item \textbf{Mantenibilidad}
+    
+    El sistema debe ser fácil de mantener y actualizar para garantizar su funcionalidad a lo largo del tiempo.
+    Los componentes del sistema deben ser modulares, lo que permite su reemplazo o actualización sin afectar el resto del sistema.
+
+
+\end{itemize}
+
