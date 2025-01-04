@@ -60,7 +60,7 @@ headsepline, % Uncomment to get a line under the header
 
 \listoffigures % Prints the list of figures
 
-\listoftables % Prints the list of tables
+% \listoftables % Prints the list of tables
 
 
 %----------------------------------------------------------------------------------------
@@ -77,12 +77,10 @@ headsepline, % Uncomment to get a line under the header
 
 \pagestyle{thesis} 
 
-\include{Chapters/Chapter1-IntroGeneral}
-% \include{Chapters/Chapter2-EstadoDelArte}
-% \include{Chapters/Chapter3-Requerimientos} 
-\include{Chapters/Chapter4-DiseñoImplementacion}
-\include{Chapters/Chapter5-EnsayosResultados} 
-\include{Chapters/Chapter6-Conclusiones} 
+\include{Chapters/Chapter1-Introduccion}
+\include{Chapters/Chapter2-DiseñoImplementacion}
+\include{Chapters/Chapter3-EnsayosResultados} 
+\include{Chapters/Chapter4-Conclusiones} 
 
 %----------------------------------------------------------------------------------------
 %	CONTENIDO DE LA MEMORIA  - APÉNDICES
@@ -99,7 +97,7 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-
+\bibliographystyle{unsrt}
 \Urlmuskip=0mu plus 1mu\relax
 \raggedright
 \nocite{*}

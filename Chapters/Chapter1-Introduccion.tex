@@ -1,12 +1,10 @@
-\chapter{Introducción} % Main chapter title
-
-\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
-\label{IntroGeneral}
+\chapter{Introducción} 
+\label{ChapterIntroduccion} 
 
 
 %----------------------------------------------------------------------------------------
 
-%\section{Introducción}
+%SECCIÓN - MOTIVACION Y OBJETIVOS
 
 %----------------------------------------------------------------------------------------
 \section{Motivación y Objetivos}
@@ -23,6 +21,12 @@ Se considera que del 30 al 60\% del peso de una bolsa de basura generada en un h
 
 Este proyecto consiste en desarrollar una solución de bajo costo que contribuya a monitorear los distintos parámetros que se deben tener en cuenta en el proceso de descomposición de los residuos orgánicos, para obtener como resultado un compost de buena calidad.
 
+%----------------------------------------------------------------------------------------
+
+%SECCIÓN - PARÁMETROS Y SU IMPORTANCIA
+
+%----------------------------------------------------------------------------------------
+
 \section{Compost - Parámentros y su importancia}
 \label{sec:CompostParámentros}
 
@@ -30,7 +34,7 @@ Determinados parámetros son importantes indicadores del proceso de descomposici
 A continuación, se explican los parámetros más relevantes y la información útil que proporcionan \citep{ManualBuenasPracticas}:
 
  \begin{enumerate}
-	\item Temperatura: la temperatura es importante para monitorear la actividad microbiana en el compost. Tal como se indica en la figura \ref{fig:curvatemp}, se observan tres fases en el proceso de descomposición aeróbica dentro de una pila de compost: fase mesófila inicial (Temperatura < 45°); fase termófila (Temperatura > 45°); y fase mesófila final, considerándose finalizado el proceso cuando se alcanza nuevamente la temperatura inicial.
+	\item Temperatura: la temperatura es importante para monitorear la actividad microbiana en el compost. Tal como se indica en la Figura \ref{fig:curvatemp}\citep{curvaTemp}, se observan tres fases en el proceso de descomposición aeróbica dentro de una pila de compost: fase mesófila inicial (Temperatura < 45°); fase termófila (Temperatura > 45°); y fase mesófila final, considerándose finalizado el proceso cuando se alcanza nuevamente la temperatura inicial.
     Cada especie de microorganismo tiene un intervalo de temperatura óptimo para su actividad: 15-40°C para los microorganismos mesófilos y 40-70°C para los termófilos \citep{FactoresCompost}. Es la actividad de estos microorganismos la generadora de calor.
     \item Humedad: la presencia de agua es indispensable para la descomposición de la materia orgánica. La humedad óptima para el crecimiento microbiano está entre 50-70\%; la actividad biologica decrece mucho cuando la humedad esta por debajo del 30\%; por encima del 70\% el agua desplaza el aire en los espacios libres existentes entre las particulas de materia orgánica reduciendo la transferencia de oxígeno y produciendo una anaerobiosis \citep{Compost}.
     \item pH: mediante el seguimiento del pH se puede obtener una medida indirecta del control de la aireación de la mezcla, ya que si en algún momento se crean condiciones anaeróbicas se liberan ácidos que provocan el descenso del pH. Al igual que con la temperatura, el pH presenta tres fases \citep{FactoresCompost}.
@@ -43,9 +47,15 @@ A continuación, se explican los parámetros más relevantes y la información �
  \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.7]{Figures/Compost Caracteristicas/Curva Temperatura.PNG}
-	\caption{Curva característica de temperatura en una pila de compost \citep{curvaTemp}}
+	\caption{Curva característica de temperatura en una pila de compost.}
 	\label{fig:curvatemp}
 \end{figure}
+
+%----------------------------------------------------------------------------------------
+
+%SECCIÓN - ESTADO DEL ARTE
+
+%----------------------------------------------------------------------------------------
 
 \section{Estado Del Arte} % Main chapter title
 
@@ -57,7 +67,7 @@ En Argentina, el compostaje se encuentra en una etapa inicial en cuanto a la ado
 
 \subsubsection{Desarrollos del INTA (Instituto Nacional de Tecnología Agropecuaria)}
 
-El INTA trabajó hace unos años en una iniciativa donde se desarrollo un prototipo de sensores básicos para medir temperatura y humedad en compostajes rurales \footnote{Ver \url{https://intainforma.inta.gob.ar/desarrollan-sensor-para-optimizar-la-produccion-de-compost/}}. Sin embargo estos avances no han sidos implementados a nivel industrial o comercial hasta donde se ha podido investigar.
+El INTA trabajó hace unos años en una iniciativa donde se desarrollo un prototipo de sensores básicos para medir temperatura y humedad en compostajes rurales \citep{INTASensorCompost}. Sin embargo estos avances no han sidos implementados a nivel industrial o comercial hasta donde se ha podido investigar.
 
 \subsubsection{Prácticas actuales}
 A nivel industrial e individual, la mayoría de las maniobras relacionadas al compostaje se desarrollan de manera manual. Estas practicas incluyen:
@@ -75,14 +85,14 @@ A nivel global las técnicas de compostaje han evolucionado significativamente y
 Se decidió detallar los casos de Estados Unidos y Japón para ejemplificar los avances a nivel global, ya que en otras partes del planeta y en países similares, los desarrollos se encuentran en fases similares.
 
 \subsubsection{Estados Unidos}
-En Estados Unidos existen soluciones privadas que integran IoT y automatizaciones para el monitoreo y procesamiento del compost. Dentro de ellas se destacan empresas como EcoRich \citep{ECORICH}
+En Estados Unidos existen soluciones privadas que integran IoT y automatizaciones para el monitoreo y procesamiento del compost. Dentro de ellas se destacan empresas como EcoRich \citep{ECORICH}.
 
 También destacan proyectos comunitarios, como el programa \textit{Zero Waste} \citep{ZeroWaste}, \textit{Farm Philly} \citep{FarmPhilly} y \textit{Denver Urban Gardens} \citep{DenverUrban}.
 
 \subsubsection{Japón}
-Entre las distintas tecnologías y proyectos comunitarios que Japón ha adoptado se destacan automatizaciones realizadas en colaboración con una empresa canadiense, \textit{Anaconda Systems Limited}\citep{Anaconda}, donde han desarrollado un sistema para compostar residuos orgánicos en cortos periodos de tiempo (aproximadamente 10 días).
+Entre las distintas tecnologías y proyectos comunitarios que Japón ha adoptado se destacan automatizaciones realizadas en colaboración con una empresa canadiense, \textit{Anaconda Systems Limited}\citep{AnacondaSystemsWebsite}, donde han desarrollado un sistema para compostar residuos orgánicos en cortos periodos de tiempo (aproximadamente 10 días).
 
-A nivel gubernamental, Japón promueve el programa SATREP \textit{Science and Technology Research Partnership for Sustainable Development} \footnote{Ver \url{https://www.jst.go.jp/global/english/}}donde se hace énfasis en el manejo sostenible de residuos orgánicos.
+A nivel gubernamental, Japón promueve el programa SATREP \textit{Science and Technology Research Partnership for Sustainable Development} \citep{JSTWebsite} donde se hace énfasis en el manejo sostenible de residuos orgánicos.
 
 \subsection{Conclusión}
 El compostaje a nivel mundial se encuentra en un punto de desarrollo en el que, aunque existen avances tecnológicos notables, estos no son ni masivos ni altamente sofisticados en su implementación general. Los sistemas automatizados y las soluciones tecnológicas están presentes principalmente en países desarrollados como Estados Unidos, Japón y algunas naciones europeas, pero su adopción a gran escala es limitada. La mayoría de las prácticas siguen siendo manuales o dependen de métodos tradicionales, sobretodo en países en vías de desarrollo.
@@ -107,7 +117,9 @@ No se consideró en el análisis la degradación de los sensores y su recalibrac
 
 
 %----------------------------------------------------------------------------------------
-%	SECCIÓN - REQUERIMIENTOS
+
+%SECCIÓN - REQUERIMIENTOS
+
 %----------------------------------------------------------------------------------------
 
 \section{Requerimientos} % Main chapter title
@@ -131,7 +143,7 @@ El desarrollo del proyecto SmartCompost se basó en un conjunto de requerimiento
 
     \item \textbf{Conectividad y transmisión}
     
-    El sistema debe permitir la conectividad a través de diferentes protocolos de comunicación para la transmisión de datos, siendo compatible con tecnologías de comunicación inalámbricas como LoRa, WiFi, etc.
+    El sistema debe permitir la conectividad a través de diferentes protocolos de comunicación para la transmisión de datos, siendo compatible con tecnologías de comunicación inalámbricas como LoRa, Wi-Fi, etc.
 
     \item \textbf{Interfaz de usuario sencilla}
     

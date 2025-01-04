@@ -1,8 +1,6 @@
-% Chapter Template
+\chapter{Ensayos y resultados} 
 
-\chapter{Ensayos y resultados} % Main chapter title
-
-\label{Chapter5} 
+\label{ChapterEnsayosResultados} 
 
 
 %----------------------------------------------------------------------------------------
@@ -129,7 +127,7 @@ Para realizar las pruebas se utilizaron los siguientes componentes:
 \subsubsection{Conexión del Sensor de Humedad YL-69 a la ESP32}
 El sensor de humedad YL-69 es un dispositivo que mide la resistencia entre dos sondas insertadas en el suelo. Esta medición se traduce en un valor analógico que refleja la humedad del suelo. El sensor YL-69 funciona junto con el módulo YL-38, que convierte la señal analógica en digital para facilitar la lectura con microcontroladores.
 
-La conexión se realizó de la siguiente manera:
+La conexión se realizó de la siguiente manera\citep{higrometroFC-28}:
 
 \begin{itemize}
     \item VCC del YL-38 conectado a 5 V.
@@ -143,7 +141,7 @@ La Figura \ref{fig:conexion_yl69} muestra el diagrama de conexión del sensor de
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{./Figures/Pruebas/conexion_yl69.png}
-    \caption{Conexión del sensor de humedad YL-69 al ESP32. Fuente: \citep{higrometroFC-28}.}
+    \caption{Conexión del sensor de humedad YL-69 al ESP32.}
     \label{fig:conexion_yl69}
 \end{figure}
 
@@ -282,7 +280,7 @@ En la tabla \ref{tab:consumosNodo} se notan estos valores (el consumo total se i
         %\textbf{Consumo total}        & \textbf{287.65 mA}     \\ \bottomrule
         \textbf{Consumo total}        & \textbf{1438 mW}     \\ \bottomrule
     \end{tabular}
-    \caption{Consumo de los componentes en mAh}
+    \caption{Consumo de los componentes en mAh.}
     \label{tab:consumosNodo}
 \end{table}
 
@@ -310,7 +308,7 @@ Por último, al final de la tabla \ref{tab:capacidadPilas} se nota el tiempo de 
         Capacidad efectiva de las pilas      & 14,63 Wh      \\ 
         Tiempo de funcionamiento & $\frac{14,63 \text{ Wh}}{1,43 \text{ w}} \approx 10,17 \text{ horas}$ \\ \bottomrule
     \end{tabular}
-    \caption{Capacidad de las pilas}
+    \caption{Capacidad de las pilas.}
     \label{tab:capacidadPilas}
 \end{table}
 
@@ -326,7 +324,7 @@ Teniendo en cuenta que el proceso de descomposición de la materia orgánica sue
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.9]{./Figures/Pruebas/duracion_pila.png}
-	\caption{Duración pilas - régimen de trabajo : 10 sg}
+	\caption{Duración pilas - régimen de trabajo : 10 seg.}
 	\label{fig:PruebaBateria}
 \end{figure}
 
@@ -351,11 +349,11 @@ Para estimar el consumo y la duración de la batería del Nodo Access Point, se 
      %   \textbf{Consumo total}        & \textbf{454 mA}     \\ \bottomrule
         \textbf{Consumo total}        & \textbf{2270 mW}     \\ \bottomrule
     \end{tabular}
-    \caption{Consumo de los componentes en mAh}
+    \caption{Consumo de los componentes en mAh.}
     \label{tab:consumosAP}
 \end{table}
 
-Se observa una diferencia en los valores del modulo LoRa, ya que para este nodo el funcionamiento del modulo es en modo escucha y no en transmisión.
+Se observa una diferencia en los valores del módulo LoRa, ya que para este nodo el funcionamiento del modulo es en modo escucha y no en transmisión.
 
 \subsubsection{Capacidad de la batería}
 En la tabla \ref{tab:capacidadBat} se muestra la capacidad de la batería. Para calcular la capacidad efectiva de la batería se tomó en cuenta el nivel de tensión mínima recomendado por el fabricante. Se empleó la cuenta \ref{eq:capacidadEfectiva} dando como resultado una capacidad efectiva de 58.33 Wh.
@@ -371,7 +369,7 @@ Por último se nota que el tiempo de funcionamiento en modo continuo es de aprox
         Capacidad efectiva de la batería       & 58.33 Wh      \\ 
         Tiempo de funcionamiento  & $\frac{58.3 \text{ Wh}}{2.27 \text{ w}} \approx 25.7 \text{ horas}$ \\ \bottomrule
     \end{tabular}
-    \caption{Capacidad de las baterías del Nodo Access Point}
+    \caption{Capacidad de las baterías del Nodo Access Point.}
     \label{tab:capacidadBat}
 \end{table}
 Para realizar la prueba de autonomía se establecieron las siguientes configuraciones:
@@ -379,7 +377,7 @@ Para realizar la prueba de autonomía se establecieron las siguientes configurac
 \begin{itemize}
     \item La batería se encontraba cargada al 100\%.
     \item Se desconecto el panel solar para evitar cargar la batería.
-    \item Se estableció una frecuencia de envió de métricas del Nodo Access Point al portal de 5 mins.
+    \item Se estableció una frecuencia de envió de métricas del Nodo Access Point al Portal Web de 5 mins.
     \item Se estableció una frecuencia de envío de métricas del Nodo Sensor al Nodo Access Point de 10 segundos.
 \end{itemize}
 Bajo estas condiciones de trabajo, la autonomía del Nodo Access Point fue de 23 horas.
@@ -406,20 +404,20 @@ Las pruebas fueron las siguientes:
     \item Conectividad a red Wi-Fi desde un nodo.
     \item Conexión y envío de paquetes LoRa desde un nodo.
     \item Envió de paquetes LoRa desde un nodo hacia otro.
-    \item Prueba de envío de un \textit{payload} JSON desde un nodo a un servicio web en una red WiFi local.
+    \item Prueba de envío de un \textit{payload} JSON desde un nodo a un servicio web en una red Wi-Fi local.
     \item Prueba de Nodo Sensor con medición de sensores, envío de paquete LoRa, y bucle con DeepSleep.
-    \item Prueba de Nodo Access Point  con simulación de paquetes LoRa entrante, manejo de colas, y envío de mediciones a servicio web en red local.
-    \item Prueba de Nodo Sensor y Nodo Access Point, contra un servicio web en red local.
-    \item Prueba de 2 Nodo Sensor y Nodo Access Point, contra un servicio web en red local.
+    \item Prueba de Nodo Access Point  con simulación de paquetes LoRa entrante, manejo de colas, y envío de mediciones a Portal Web en red local.
+    \item Prueba de Nodo Sensor y Nodo Access Point, contra un Portal Web en red local.
+    \item Prueba de 2 Nodo Sensor y Nodo Access Point, contra un Portal Web en red local.
     \item Prueba final de 2 Nodo Sensor y Nodo Access Point, conectados al router 4G portátil, contra un servicio en la red local expuesto a la red pública.
 \end{enumerate}
 
-Una vez realizada la prueba 10, se considera que el firmware se encuentra en condiciones de acoplarse al sistema del Portal web: como todas las pruebas se realizaron teniendo en cuenta el contrato de servicios establecido por el Portal web, la integración real consiste en simplemente un cambio de url en el endpoint.
+Una vez realizada la prueba 10, se considera que el firmware se encuentra en condiciones de acoplarse al sistema del Portal Web: como todas las pruebas se realizaron teniendo en cuenta el contrato de servicios establecido por el Portal Web, la integración real consiste en simplemente un cambio de url en el endpoint.
 
 \subsubsection{Resultados}
 
 Entre los principales desafíos de las pruebas se encuentra el manejo de la tecnología LoRa, ya que la misma implica distintas dificultades tanto a nivel hardware como firmware.
-Es por eso que para la prueba 3 no sólo se hizo uso de logeo en depuración, sino tambien de un analizador de espectro digital (SDR basado en el chip rtl2832u) para poder depurar la señal, confirmar la frecuencia de su portadora, ancho de banda, y nivel respecto al piso de ruido. Para ello se empleó la herramienta AirSpy, el cual permite observar el espectro en base al IQ enviado por USB del SDR, como se observa en la figura \ref{fig:pruebas_firmware_1}.
+Es por eso que para la prueba 3 no sólo se hizo uso de logeo en depuración, sino tambien de un analizador de espectro digital (SDR basado en el chip rtl2832u) para poder depurar la señal, confirmar la frecuencia de su portadora, ancho de banda, y nivel respecto al piso de ruido. Para ello se empleó la herramienta AirSpy, el cual permite observar el espectro en base al IQ (\textit{in-phase/quadrature}) enviado por USB del SDR, como se observa en la figura \ref{fig:pruebas_firmware_1}.
 
 \begin{figure}[H]
     \centering
@@ -428,11 +426,11 @@ Es por eso que para la prueba 3 no sólo se hizo uso de logeo en depuración, si
     \label{fig:pruebas_firmware_1}
 \end{figure}
 
-Con esta herramienta se permitió determinar, no sólo que efectivamente el Módulo LoRa está enviando paquetes en el medio, sino también corroborar su correcta configuración de portadora y ancho de banda (entre otros). Esto es así ya que el umbral amarillo (detector de máximos) muestra que la señal LoRa se encuentra ubicada correctamente en la portadora de 433 MHz, con un ancho de banda de 125 KHz, y un nivel de la señal sobre el piso de ruido (SNR) mucho mayor a 0dB. Éste último parámetro es de vital importancia ya que indica la calidad con la que el receptor va a recibir la señal. Depende principalmente de la corriente que pueda brindar la fuente de alimentación, de la antena del Módulo LoRa, la antena del SDR, y la distancia entre las antenas. En este caso, dado que no hace falta una medición espectral absoluta ni precisa, simplemente de forma preliminar se puede observar que el Módulo LoRa opera en rangos correctos.
+Con esta herramienta se permitió determinar, no sólo que efectivamente el Módulo LoRa está enviando paquetes en el medio, sino también corroborar su correcta configuración de portadora y ancho de banda (entre otros). Esto es así ya que el trazo amarillo (detector de máximos) muestra que la señal LoRa se encuentra ubicada correctamente en la portadora de 433 MHz, con un ancho de banda de 125 kHz, y un nivel de la señal sobre el piso de ruido (SNR) mucho mayor a 0dB. Éste último parámetro es de vital importancia ya que indica la calidad con la que el receptor va a recibir la señal. Depende principalmente de la corriente que pueda brindar la fuente de alimentación, de la antena del Módulo LoRa, la antena del SDR, y la distancia entre las antenas. En este caso, dado que no hace falta una medición espectral absoluta ni precisa, simplemente de forma preliminar se puede observar que el Módulo LoRa opera en rangos correctos.
 
 Por otra parte, otro de los obstáculos que se encontraron a lo largo de las pruebas fue el manejo de memoria por parte del Nodo Access Point, ya que el mismo almacena en un \textit{buffer} los mensajes encolados para enviar, por lo que es un recurso muy limitado que sobrecargaba al \textit{garbage collector}, y por ende a la CPU.
 
-Dado que todas las pruebas se realizaron en modo depuración, fue de vital importancia tener registro de la memoria total, memoria liberada, cantidad de paquetes encolados, paquetes enviados, paquetes perdidos, la cantidad de errores, etc, y así poder describir al sistema con el fin de parametrizar la configuración y conseguir el mayor throughput con la menor tasa de error posible. En la Figura \ref{fig:pruebas_firmware_2} se observa un extracto de los logs del Nodo AP:
+Dado que todas las pruebas se realizaron en modo depuración, fue de vital importancia tener registro de la memoria total, memoria liberada, cantidad de paquetes encolados, paquetes enviados, paquetes tirados, la cantidad de errores, etc, y así poder describir al sistema con el fin de parametrizar la configuración y conseguir el mayor throughput con la menor tasa de error posible. En la Figura \ref{fig:pruebas_firmware_2} se observa un extracto de los logs del Nodo AP:
 
 \begin{figure}[H]
     \centering
@@ -558,14 +556,14 @@ Las Figuras \ref{fig:nodoap1EstrFinal} y \ref{fig:nodoap2EstrFinal} muestran dos
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.20]{Figures/Pruebas/nodoap1.jpeg}
-	\caption{Nodo Access Point - Vista interior}
+	\caption{Nodo Access Point - Vista interior.}
 	\label{fig:nodoap1EstrFinal}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.25]{Figures/Pruebas/nodoAP2.jpeg}
-	\caption{Nodo Access Point - Vista caja cerrada}
+	\caption{Nodo Access Point - Vista caja cerrada.}
 	\label{fig:nodoap2EstrFinal}
 \end{figure}
 
@@ -574,14 +572,14 @@ A su vez en la Figura \ref{fig:nodoSensor1EstFinal} observa al Nodo Sensor dentr
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.25]{Figures/Pruebas/nodoSensor2.jpeg}
-	\caption{Nodo Sensor - Vista interior}
+	\caption{Nodo Sensor - Vista interior.}
 	\label{fig:nodoSensor1EstFinal}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.25]{Figures/Pruebas/nodoSensor1.jpeg}
-	\caption{Nodo Sensor - Vista caja cerrada}
+	\caption{Nodo Sensor - Vista caja cerrada.}
 	\label{fig:nodoSensor2EstFinal}
 \end{figure}
 
@@ -628,9 +626,11 @@ En esta segunda prueba se verificó el funcionamiento en condiciones reales de l
 
 Los dos Nodos Sensores se ubicaron en una misma habitación y el Nodo Access Point en un balcón con exposición a la luz solar de manera directa, de forma que el panel solar pueda cargar la batería. (Se entiende que en esta prueba no está maximizado el tiempo de exposición a la luz solar, y por lo tanto el tiempo de carga).
 
-La figura \ref{fig:pruebas_grafana} muestra un tablero de Grafana dividido en dos secciones principales: la mitad superior presenta los gráficos correspondientes al Nodo Sensor número 2, mientras que la mitad inferior visualiza la información recopilada por el Nodo Access Point. Este diseño permite una comparación directa y simultánea de los datos recolectados por ambos nodos, facilitando el monitoreo integral del sistema.
+La Figura \ref{fig:pruebas_grafana} muestra un tablero de Grafana dividido en dos secciones principales: la mitad superior presenta los gráficos correspondientes al Nodo Sensor número 2, mientras que la mitad inferior visualiza la información recopilada por el Nodo Access Point. Este diseño permite una comparación directa y simultánea de los datos recolectados por ambos nodos, facilitando el monitoreo integral del sistema.
 Ambos nodos operaron durante mas de 28 horas sin interrupciones. 
 Durante este período, el Nodo Access Point estuvo expuesto a luz solar durante medio día y operó durante otro medio día sin recargar la batería. A partir de estos resultados, se concluye que la capacidad del sistema para operar de manera continua durante más de 24 horas valida la sostenibilidad del ciclo de carga y descarga de la batería, garantizando su funcionamiento eficiente sin interrupciones.
+
+Por un lado, es importante destacar que el nivel de batería del Nodo Sensor 2 no ha sido procesado, por lo que no se presenta en una escala porcentual de 0 a 100, sino como el valor analógico medido.
 
 \begin{figure}[H]
     \centering
@@ -638,8 +638,6 @@ Durante este período, el Nodo Access Point estuvo expuesto a luz solar durante 
     \caption{Resultados de la prueba integral vistas en Grafana.}
     \label{fig:pruebas_grafana}
 \end{figure}
-
-Por un lado, es importante destacar que el nivel de batería del Nodo Sensor 2 no ha sido procesado, por lo que no se presenta en una escala porcentual de 0 a 100, sino como el valor analógico medido.
 
 Por otro lado, el Nodo Access Point demostró estabilidad en el sistema, al recibir y enviar todos los mensajes, así como al registrar una única medición de inicio (startup), lo que indica que, durante toda la prueba, no se produjo ningún reinicio.
 

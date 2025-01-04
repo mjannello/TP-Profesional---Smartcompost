@@ -1,5 +1,4 @@
 \chapter{Diseño e implementación} % Main chapter title
-
 \label{ChapterDisenoImplementacion} 
 
 
@@ -20,7 +19,7 @@ El principal desafío del proyecto fue establecer una red de comunicación entre
 \begin{itemize}
     \item Acceso a Internet mediante red móvil: los nodos deben tener la capacidad de transmitir los datos a través de la red móvil debido a la necesidad de acceso a Internet en áreas extensas y remotas. 
     \item Eficiencia en costos y simplicidad: la solución debe ser sencilla y barata de implementar, especialmente en lo que refiere al hardware de los microcontroladores.
-    \item Alcance y cobertura extensa: el sistema debe ser capaz de operar en áreas donde las distancias entre los nodos y el punto de acceso a Internet pueden ser de hasta 500 metros, lo que excluye tecnologías de corto alcance como el WiFi.
+    \item Alcance y cobertura extensa: el sistema debe ser capaz de operar en áreas donde las distancias entre los nodos y el punto de acceso a Internet pueden ser de hasta 500 metros, lo que excluye tecnologías de corto alcance como el Wi-Fi.
 \end{itemize}
 
 
@@ -29,7 +28,7 @@ El principal desafío del proyecto fue establecer una red de comunicación entre
 Se evaluaron distintas tecnologías para permitir el acceso a Internet de forma inalámbrica:
 
 \begin{itemize}
-    \item WiFi: aunque es una tecnología de bajo costo y ampliamente soportada, tiene limitaciones importantes en cuanto a su alcance y capacidad de penetración en entornos remotos o con obstáculos. Por este motivo, se descarta para cubrir áreas extensas.
+    \item Wi-Fi: aunque es una tecnología de bajo costo y ampliamente soportada, tiene limitaciones importantes en cuanto a su alcance y capacidad de penetración en entornos remotos o con obstáculos. Por este motivo, se descarta para cubrir áreas extensas.
     \item Redes Móviles (GSM, 3G, 4G): se optó por utilizar la red móvil, ya que ofrece una solución más robusta en términos de cobertura geográfica y fiabilidad. Entre las alternativas, la tecnología 4G se destaca por ofrecer una mayor velocidad y mejor latencia, ideal para enviar los datos recolectados por los nodos sensores. 
     Dado que equipar a cada nodo con su propio módulo de acceso a red móvil implicaría un costo elevado y mayor mantenimiento, esta opción es descartada. Por lo tanto, no se dará acceso individual a cada nodo a la red móvil.
 \end{itemize}
@@ -51,7 +50,7 @@ El Nodo AP actúa como enrutador, permitiendo la recolección y posterior transm
 
 Dado que los nodos deben estar dispersos en áreas extensas y la comunicación requiere bajo consumo de energía, se evaluaron las siguientes tecnologías:
 \begin{itemize}
-    \item WiFi: aunque es una opción común, fue descartada debido a su alcance limitado y alto consumo energético.
+    \item Wi-Fi: aunque es una opción común, fue descartada debido a su alcance limitado y alto consumo energético.
 
     \item Bluetooth: ofrece bajo consumo, pero también tiene un alcance limitado y no es adecuado para transmitir datos a largas distancias.
     
@@ -81,14 +80,14 @@ En las figuras \ref{fig:DisNodoSensor} y \ref{fig:DisNodoAP} se presenta en form
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{Figures/Hardware/Modulos/nodo_sensor.png}
-    \caption{ Diagrama de diseño del Nodo Sensor}
+    \caption{ Diagrama de diseño del Nodo Sensor.}
     \label{fig:DisNodoSensor}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{Figures/Hardware/Modulos/nodo_ap.png}
-    \caption{Diagrama de diseño del Nodo Access Point}
+    \caption{Diagrama de diseño del Nodo Access Point.}
     \label{fig:DisNodoAP}
 \end{figure}
 
@@ -102,7 +101,7 @@ En las figuras \ref{fig:DisNodoSensor} y \ref{fig:DisNodoAP} se presenta en form
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./Figures/Hardware/Modulos/esp32.png}
-	\caption{Microcontrolador ESP-WROOM-32}
+	\caption{Microcontrolador ESP-WROOM-32.}
 	\label{fig:Microcontrolador}
 \end{figure}
 
@@ -111,7 +110,7 @@ El modulo microcontrolador que se utiliza en el proyecto es el ESP-WROOM-32 (ver
 Características principales (véase \cite{Esp32Datasheet} y \cite{Esp32WroomDatasheet}):
 \begin{itemize}
     \item Microcontrolador ESP32: el núcleo del ESP-WROOM-32 es el chip ESP32, que incluye dos núcleos de CPU capaces de funcionar a hasta 240 MHz, permitiendo manejar múltiples tareas en paralelo.
-    \item Conectividad WiFi: soporta los estándares IEEE 802.11 b/g/n (2.4 GHz).
+    \item Conectividad Wi-Fi: soporta los estándares IEEE 802.11 b/g/n (2.4 GHz).
     \item Memoria RAM 520 KB de SRAM.
     \item Memoria Flahs 4MB.
     \item I/O: múltiples GPIO que soportan distintas interfaces y protocolos como UART, SPI, I2C, PWM, ADC y DAC.
@@ -126,7 +125,7 @@ La elección del microcontrolador se fundamentó tanto en las prestaciones tecno
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./Figures/Hardware/Modulos/LoRa.png}
-	\caption{Modulo LoRa SX1278}
+	\caption{Modulo LoRa SX1278.}
 	\label{fig:LoRa}
 \end{figure}
 
@@ -151,7 +150,7 @@ El módulo LoRa SX1278 es una solución de comunicaciones de largo alcance y baj
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{Figures//Hardware//Modulos/1-SIM800L-Module.jpg}
-    \caption{Módulo GSM SIM800L}
+    \caption{Módulo GSM SIM800L.}
     \label{fig:enter-label}
 \end{figure}
 
@@ -167,7 +166,7 @@ Se ha llegado inclusive a desarrollar una herramienta propia para su debido mane
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{Figures/Firmware/admin_gsm.png}
-    \caption{Aplicativo de escritorio de administracion del SIM800L}
+    \caption{Aplicativo de escritorio de administracion del SIM800L.}
     \label{fig:aplicativoSIM800L}
 \end{figure}
 
@@ -203,12 +202,12 @@ Esta solución ofreció una serie de ventajas significativas para nuestro sistem
     
     Esta solución también ofrece la ventaja de adaptabilidad: si la red GSM dejara de estar disponible, no sería un problema gracias a esta configuración. Incluso en el caso de que la red 4G fuera reemplazada por 5G, solo sería necesario sustituir el router portátil 4G por uno compatible con 5G.
     
-    \item Simplicidad en la integración: debido a que es un router WiFi, no hace falta implementar nada para acceder a internet, es totalmente transparente para cualquier interfaz WiFi, a diferencia de comandos AT por serie.
+    \item Simplicidad en la integración: debido a que es un router Wi-Fi, no hace falta implementar nada para acceder a internet, es totalmente transparente para cualquier interfaz Wi-Fi, a diferencia de comandos AT por serie.
 \end{itemize}
 
 La migración del módulo SIM800L a un router 4G portátil fue una decisión acertada que permitió superar los problemas de alimentación y alta demanda energética que inicialmente afectaban la estabilidad de los nodos. Con el router 4G portátil, se logró una conectividad más robusta y eficiente, mejorando significativamente la fiabilidad de la solución en escenarios de campo y condiciones adversas.
 
-A su vez, el hecho de que la interfaz de comunicación con el Nodo AP es WiFi, en el futuro que dejen de existir redes 4G, se podrán migrar a nuevos dispositivos de redes móviles mas modernas.
+A su vez, el hecho de que la interfaz de comunicación con el Nodo AP es Wi-Fi, en el futuro que dejen de existir redes 4G, se podrán migrar a nuevos dispositivos de redes móviles mas modernas.
 
 
 \subsubsection{Sensor de Temperatura: DS18B20}
@@ -240,7 +239,7 @@ Debido a sus excelentes prestaciones técnicas, como su amplio rango de medició
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{./Figures/Hardware/Sensores/sensorhumedad.png}
-	\caption{Sensor de humedad YL-69}
+	\caption{Sensor de humedad YL-69.}
 	\label{fig:SensorHumedad}
 \end{figure}
 
@@ -266,7 +265,7 @@ Su estructura simple y la versatilidad que presenta al aportar salidas digitales
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{./Figures/Hardware/Alimentacion/pilas.png}
-	\caption{Pilas 18650}
+	\caption{Pilas 18650.}
 	\label{fig:pilas}
 \end{figure}
 
@@ -299,11 +298,11 @@ Las pilas 18650 ofrecieron varias ventajas:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{./Figures/Hardware/Alimentacion/mini360.png}
-	\caption{Regulador Mini-360 Fuente:\cite{MINI360}.}
+	\caption{Regulador Mini-360.}
 	\label{fig:mini360}
 \end{figure}
 
-Para adaptar la alimentación a los requerimientos del proyecto se utiliza un regulador de tensión Mini-360. Este es un regulador \textit{buck} de alta eficiencia que permite reducir la tensión de entrada de las baterías a un nivel adecuado (5 V) para los nodos. Sus especificaciones principales son las siguientes:
+Para adaptar la alimentación a los requerimientos del proyecto se utiliza un regulador de tensión Mini-360\cite{MINI360}. Este es un regulador \textit{buck} de alta eficiencia que permite reducir la tensión de entrada de las baterías a un nivel adecuado (5 V) para los nodos. Sus especificaciones principales son las siguientes:
 
 \begin{itemize}
     \item Tensión de entrada: 4.75 V a 23 V.
@@ -316,7 +315,7 @@ Para realizar el seguimiento del estado de carga de las baterías, se implement�
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{./Figures/Hardware/Alimentacion/divisor_pilas.png}
-	\caption{Divisor resistivo batería}
+	\caption{Divisor resistivo batería.}
 	\label{fig:DivresistivoBat}
 \end{figure}
 
@@ -335,13 +334,13 @@ Es decir, a la salida del divisor resistivo se obtienen 3.3 V cuando las baterí
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{./Figures/Hardware/Alimentacion/bateria.png}
-	\caption{Bateria Kaise 1270 Fuente: \cite{kaise}.}
+	\caption{Bateria Kaise 1270.}
 	\label{fig:bateria}
 \end{figure}
 
 \label{sec:AlimentacionNodoAP}
 
-Para el Nodo Access Point, se utiliza una batería más grande para soportar mayores demandas de energía. Este nodo está alimentado por una batería de 12 V y 7 Ah marca Kaise. 
+Para el Nodo Access Point, se utiliza una batería más grande para soportar mayores demandas de energía. Este nodo está alimentado por una batería de 12 V y 7 Ah marca Kaise\cite{kaise}. 
 Las especificaciones de esta batería son las siguientes:
 
 \begin{itemize}
@@ -364,7 +363,7 @@ Para mantener esta batería cargada, se emplea un panel solar de 12 V y 10 W de 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./Figures/Hardware/Alimentacion/panel.png}
-	\caption{Panel Solar }
+	\caption{Panel Solar.}
 	\label{fig:panel}
 \end{figure}
 
@@ -373,7 +372,7 @@ Al igual que el Nodo Sensor, se implementa un sistema de monitoreo del estado de
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{./Figures/Hardware/Alimentacion/divisor_bateria.png}
-	\caption{Divisor resistivo baterias}
+	\caption{Divisor resistivo baterías.}
 	\label{fig:DivresistivoBat}
 \end{figure}
 
@@ -408,7 +407,7 @@ En la figura \ref{fig:esquematico} se nota el esquemático electrónico del proy
 
 
 
-Para el desarrollo del PCB se utilizó la herramienta KiCAD. Se diseñó una placa de simple faz, sin componentes SMD, lo que facilitó su fabricación. El proceso de manufactura estuvo a cargo del Laboratorio de Circuitos Impresos (LCI) de la Facultad de Ingeniería de la Universidad de Buenos Aires.
+Para el desarrollo del PCB se utilizó la herramienta KiCAD\citep{KiCadWebsite}. Se diseñó una placa de simple faz, sin componentes SMD, lo que facilitó su fabricación. El proceso de manufactura estuvo a cargo del Laboratorio de Circuitos Impresos (LCI) de la Facultad de Ingeniería de la Universidad de Buenos Aires.
 Se aprovecha esta sección específica del PCB para agradecer al LCI por sus prestaciones y servicios y destacar la importancia de contar con un laboratorio de estas características para el desarrollo de proyectos universitarios.
 
 En la figura \ref{fig:pcb} se muestra el PCB de los nodos.
@@ -416,7 +415,7 @@ En la figura \ref{fig:pcb} se muestra el PCB de los nodos.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{./Figures/Hardware/PCB/pcb.png}
-	\caption{PCB de los nodos}
+	\caption{PCB de los nodos.}
 	\label{fig:pcb}
 \end{figure}
 
@@ -430,7 +429,7 @@ En la imagen \ref{fig:pcbFinal} se muestra el PCB en su versión con los compone
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.8]{./Figures/Hardware/PCB/placa-final.png}
-	\caption{Versión final del PCB con los componentes montados}
+	\caption{Versión final del PCB con los componentes montados.}
 	\label{fig:pcbFinal}
 \end{figure}
 
@@ -456,7 +455,7 @@ Esta arquitectura modular permite una implementación flexible y escalable, dond
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{Figures/Firmware/nanoframework_arq.png}
-    \caption{Diagrama de la arquitectura del firmware}
+    \caption{Diagrama de la arquitectura del firmware.}
     \label{fig:enter-label}
 \end{figure}
 
@@ -474,7 +473,7 @@ En la Figura \ref{fig:diagrama-flujo-sensor} se diagrama el flujo del Nodo Senso
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{Figures/Firmware/flujo_medidor.png}
-    \caption{Diagrama de flujo del Nodo Sensor}
+    \caption{Diagrama de flujo del Nodo Sensor.}
     \label{fig:diagrama-flujo-sensor}
 \end{figure}
 
@@ -482,8 +481,8 @@ En la Figura \ref{fig:diagrama-flujo-sensor} se diagrama el flujo del Nodo Senso
     \item Configurar el hardware: aquí se configuran los respectivos pines del ESP32 para las distintas funcionalidades requeridas por los periféricos, como así también la configuración del kernel con la inicialización de los objetos requeridos para los distintos servicios utilizados (servicio Lora, servicio de logging, etc).
     \item Inicializar los sensores: se instancias los objetos para los sensores de temperatura, humedad y batería, con su debida validación para confirmar su correcto funcionamiento.
     \item Medir batería, temperatura y humedad: Para la medición de la batería y humedad, se utilizan 2 pines asociados a dos ADC distintos, y con su correspondiente transformación matemática se obtiene la magnitud deseada. En el caso del sensado de temperatura, la comunicación con el sensor DS18B20 se realiza a través del protocolo 1-Wire.
-    \item Enviar por LoRa: se serializan las mediciones en un payload binario y se escriben en un bus de datos correspondientes a un módulo SPI del ESP32. El total funcionamiento del módulo LoRa SX1278 consiste en la escritura y lectura de registros del módulo a través del protocolo SPI (4. Description of the Registers \cite{LoraDatasheet}).
-    \item Deep sleep: una vez finalizado el envío del payload, el ESP32 es configurado para entrar en su modo Deep Sleep, el cual como indica su datasheet (31 LowPower Management \cite{Esp32Datasheet}) se deshabilitan muchas funcionalidades  que permiten un consumo total de aproximadamente $6.5 \mu A$, aumentando al máximo la autonomía del microcontrolador.
+    \item Enviar por LoRa: se serializan las mediciones en un payload binario y se escriben en un bus de datos correspondientes a un módulo SPI del ESP32. El total funcionamiento del módulo LoRa SX1278 consiste en la escritura y lectura de registros del módulo a través del protocolo SPI (\cite{LoraDatasheet}).
+    \item Deep sleep: una vez finalizado el envío del payload, el ESP32 es configurado para entrar en su modo Deep Sleep, el cual como indica su datasheet (\cite{Esp32Datasheet}) se deshabilitan muchas funcionalidades  que permiten un consumo total de aproximadamente $6.5 \mu A$, aumentando al máximo la autonomía del microcontrolador.
     Por otro lado, el módulo LoRa SX1278 también posee la capacidad de entrar en modo DeepSleep, el cual apaga todos los PLLs y deja sólo prendido la memoria de registros y el módulo SPI (2.1.4. Operating Modes in FSK/OOK Mode \cite{LoraDatasheet}).
 \end{enumerate}
 
@@ -493,16 +492,16 @@ Este flujo se repite indefinidamente hasta que el Nodo se quede sin batería o s
 
 Este Nodo tiene que como requerimiento principal en su diseño servir de punto de acceso entre los Nodos Sensor y el servicio en la nube. Por lo que debe poder actuar no sólo como enrutador, sino como \textit{buffer} de los mensajes que llegan.
 
-En la Figura \ref{fig:diagrama-flujo-ap} se diagrama el flujo del Nodo Sensor, el cual consiste en una etapa de configuración y luego en la ejecución de dos hilos paralelos, junto con un hilo manejado por eventos:
+En la Figura \ref{fig:diagrama-flujo-ap} se diagrama el flujo del Nodo AP, el cual consiste en una etapa de configuración y luego en la ejecución de dos hilos paralelos, junto con un hilo manejado por eventos:
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{Figures/Firmware/flujo_ap.png}
-    \caption{Diagrama de flujo del Nodo AP}
+    \caption{Diagrama de flujo del Nodo AP.}
     \label{fig:diagrama-flujo-ap}
 \end{figure}
 
-La etapa de configuración consiste en la inicialización del mismo kernel descrito en el Nodo Sensor previamente, con el agregado de la configuración a la red WiFi 802.11g provista por el Router 4G portátil.
+La etapa de configuración consiste en la inicialización del mismo kernel descrito en el Nodo Sensor previamente, con el agregado de la configuración a la red Wi-Fi 802.11g provista por el Router 4G portátil.
 El Nodo AP está provisto de su sensado de batería mediante el uso de un ADC interno del ESP32 y un divisor resistivo.
 
 Una vez configurado el Nodo se instancian dos hilos que se ejecutan en paralelo, y se levanta un hilo que se ejecuta mediante una interrupción de un pin del Módulo LoRa.
@@ -515,7 +514,7 @@ El hilo "main loop" se describe con los siguientes pasos:
     \item Limpiar memoria: debido a los bajos recursos del ESP32, particularmente de memoria RAM, se realiza específicamente una limpieza de punteros y del garbage collector para brindar estabilidad del sistema.
 \end{enumerate}
 
-El hilo "medidor loop" funciona considerando que el Nodo AP también puede tener sus propias mediciones, y por lo tanto desde la estructura de datos del Portal Web, considerarlo un Nodo Sensor más. Por tanto en este hilo se encolan cada X segundos la medición del nivel de batería del Nodo AP, junto con la recolección de distintos eventos, como la cantidad de mensajes encolados, enviados, cantidad de errores, etc.
+El hilo "medidor loop" \space funciona considerando que el Nodo AP también puede tener sus propias mediciones, y por lo tanto desde la estructura de datos del Portal Web, considerarlo un Nodo Sensor más. Por tanto, en este hilo se encolan cada arbitrariamente X segundos la medición del nivel de batería del Nodo AP, junto con la recolección de distintos eventos, como la cantidad de mensajes encolados, enviados, cantidad de errores, etc.
 
 Por último, el hilo de "medición recibida" tiene como única responsabilidad encolar de forma segura los payloads binarios recibidos por el Módulo LoRa. Se invoca mediante una interrupción producida por el pin del ESP32 conectado al pin del Módulo LoRa asociado al evento RX-READY (2.1.11. Digital IO Pins Mapping \cite{LoraDatasheet}).
 
@@ -553,7 +552,7 @@ Dado que no hay requerimientos de procesamiento de señales ni procesamiento int
 
 nanoFramework \citep{nanoframework} es una plataforma de desarrollo de código abierto que permite la utilización del lenguaje de programación C\# y del entorno .NET en dispositivos embebidos, como el ESP32. Esta plataforma está diseñada específicamente para microcontroladores con recursos limitados, proporcionando una forma simplificada de aprovechar el ecosistema .NET en dispositivos de bajo consumo.
 
-La compatibilidad de nanoFramework con el ESP32 permite que los desarrolladores puedan programar en C\# sobre este microcontrolador, el cual incorpora características avanzadas como conectividad WiFi y Bluetooth, además de acceso a diversos periféricos. No obstante, existen ciertas limitaciones al comparar su uso con lenguajes de bajo nivel como C o C++.
+La compatibilidad de nanoFramework con el ESP32 permite que los desarrolladores puedan programar en C\# sobre este microcontrolador, el cual incorpora características avanzadas como conectividad Wi-Fi y Bluetooth, además de acceso a diversos periféricos. No obstante, existen ciertas limitaciones al comparar su uso con lenguajes de bajo nivel como C o C++.
 
 La estructura de nanoFramework incluye una implementación reducida del Common Language Runtime (CLR), que permite la ejecución de aplicaciones en C\# en el microcontrolador. De esta manera, el código escrito en C\# es interpretado y ejecutado directamente en el dispositivo. Además, nanoFramework ofrece un conjunto de bibliotecas optimizadas, adaptadas para el trabajo con hardware embebido, lo cual permite la interacción con periféricos como GPIO, I2C, SPI y UART.
 
@@ -574,7 +573,7 @@ Esta estructura tiene como objetivo minimizar los esfuerzos de mantenimiento del
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{Figures//Firmware/smartcompost_app.png}
-    \caption{Estructura de proyectos del firmware SmartCompost}
+    \caption{Estructura de proyectos del firmware SmartCompost.}
     \label{fig:estructura-codigo-firmware}
 \end{figure}
 
@@ -614,7 +613,7 @@ Para garantizar un entorno de desarrollo y producción consistente y fácil de a
 
 En primera instancia se desarrolló una capa de presentación aplicando la tecnología ReactJS con la finalidad de ser utilizada por los usuarios del sistema y así lograr gestionar sus composteras, los parámetros de sus nodos y administrar el estado general de compostaje. 
 
-La administración de los usuarios estaría orientada a organizaciones que inician su sesión en una capa de logueo como se indica en la figura \ref{fig:login}. 
+La administración de los usuarios estaría orientada a organizaciones que inician su sesión en una capa de logueo como se indica en la Figura \ref{fig:login}. 
 
 \begin{figure}[H]
 	\centering
@@ -623,7 +622,7 @@ La administración de los usuarios estaría orientada a organizaciones que inici
 	\label{fig:login}
 \end{figure}
 
-Dentro de la sesión de cada usuario se puede observar el estado de cada uno de sus Nodos Access Point diferenciando cromáticamente y con un label su nivel de batería, tal como se indica en la figura \ref{{fig:Dash}. 
+Dentro de la sesión de cada usuario se puede observar el estado de cada uno de sus Nodos Access Point diferenciando cromáticamente y con un label su nivel de batería, tal como se indica en la Figura \ref{fig:Dash}. 
 
 \begin{figure}[H]
 	\centering
@@ -632,7 +631,7 @@ Dentro de la sesión de cada usuario se puede observar el estado de cada uno de 
 	\label{fig:Dash}
 \end{figure}
 
-Finalmente, de forma sencilla e intuitiva, al ingresar en cada uno de los Nodos AP se podría demostrar en mayor detalle los parámetros de cada compostera asociada. 
+Finalmente, de forma sencilla e intuitiva, al ingresar en cada uno de los Nodos AP se podría demostrar en mayor detalle los parámetros de cada compostera asociada como se observa en la Figura \ref{fig:web-detalles-nodoAP}. 
 
 \begin{figure}[H]
     \centering
@@ -648,12 +647,12 @@ Sin embargo, se tomó la decisión de no dar demasiado énfasis al desarrollo de
 
 Para garantizar un control adecuado del sistema y obtener visibilidad sobre su rendimiento, se buscó una solución eficiente para observar y monitorear los datos en tiempo real. Durante este proceso, se evaluaron diversas herramientas, como Kibana, que aunque potente, resultaba demasiado demandante en cuanto a recursos. También se consideró Datadog, una opción robusta pero con un costo elevado que no se ajustaba al presupuesto del proyecto.
 
-Finalmente, se optó por integrar Grafana, una herramienta que ofrece un equilibrio ideal entre funcionalidad y eficiencia, permitiendo la visualización de datos tanto desde la base de datos MySQL como desde los logs del backend y del reverse proxy Nginx. A continuación, se presentan ejemplos de los dashboards utilizados para este monitoreo.
+Finalmente, se optó por integrar Grafana, una herramienta que ofrece un equilibrio ideal entre funcionalidad y eficiencia, permitiendo la visualización de datos tanto desde la base de datos MySQL como desde los logs del backend y del reverse proxy Nginx. A continuación, en la Figura \ref{fig:grafana-dashboard} se presentan ejemplos de los dashboards utilizados para este monitoreo.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.3]{./Figures/PortalWeb/Grafana-dashboard.jpeg}
-	\caption{Dashboards de Grafana}
+	\caption{Dashboards de Grafana.}
 	\label{fig:grafana-dashboard}
 \end{figure}
 
@@ -679,13 +678,13 @@ Por último, el uso de la biblioteca estándar de Golang \cite{GoStdlibTesting} 
 
 
 \subsubsection{Arquitectura utilizada}
-Para la estructura del backend, se optó por una arquitectura hexagonal \citep{ArquitecturaHexagonal:15} combinada con principios de \textit{Domain-Driven Design (DDD)}\cite{Evans2003}. Este enfoque permitió desarrollar un sistema modular y flexible, donde las diferentes capas de la aplicación están claramente separadas, promoviendo la independencia de las reglas de negocio con respecto a los detalles de infraestructura.
+Para la estructura del backend, se optó por una arquitectura hexagonal \citep{ArquitecturaHexagonal:15} combinada con principios de \textit{Domain-Driven Design (DDD)}\cite{Evans2003}. Este enfoque permitió desarrollar un sistema modular y flexible como se puede observar en la Figura \ref{fig:arquitecturahexagonal}\citep{ArquitecturaHexagonal:15}, donde las diferentes capas de la aplicación están claramente separadas, promoviendo la independencia de las reglas de negocio con respecto a los detalles de infraestructura.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{./Figures/PortalWeb/Arquitectura-Hexagonal.jpeg}
-	\caption{Arquitectura hexagonal. Fuente: \citep{ArquitecturaHexagonal:15}.}
+	\caption{Arquitectura hexagonal.}
 	\label{fig:arquitecturahexagonal}
 \end{figure}
 
@@ -693,12 +692,12 @@ En conjunto, la combinación de la arquitectura hexagonal y DDD  brinda una base
 
 Un ejemplo concreto de las ventajas de la arquitectura hexagonal se evidenció cuando se decidió cambiar la base de datos de Postgres a MySQL. Este cambio fue impulsado por la necesidad de aprovechar ciertas características y optimizaciones de MySQL que se adaptaban mejor a las necesidades de rendimiento y escalabilidad.
 
-Gracias a la arquitectura hexagonal, este proceso fue sencillo. Como la lógica de negocio estaba desacoplada de los detalles específicos de la base de datos, solo se necesitó ajustar los adaptadores que conectaban el núcleo de la aplicación con el sistema de persistencia. Esto significó que el resto de la aplicación, incluyendo las reglas de negocio y los servicios de dominio permanecieran inalterados.
+Gracias a la arquitectura hexagonal, este proceso fue sencillo. Como la lógica de negocio estaba desacoplada de los detalles específicos de la base de datos, solo se necesitó ajustar los adaptadores que conectaban el núcleo de la aplicación con el sistema de persistencia. Esto significó que el resto de la aplicación, incluyendo las reglas de negocio y los servicios de dominio permanecieran inalterados, tal como se observa en la Figura \ref{fig:modifAdapters}. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.7]{./Figures/PortalWeb/Ej_cambio-adapters.png}
-	\caption{Arquitectura hexagonal - Modificación de adapters}
+	\caption{Arquitectura hexagonal - Modificación de adapters.}
 	\label{fig:modifAdapters}
 \end{figure}
 
@@ -717,12 +716,12 @@ Además, se desarrolló una aplicación específica llamada \textit{simulator} p
 
 Para el almacenamiento de datos en el proyecto, se eligió MySQL, una base de datos relacional ampliamente reconocida en la industria del software. Las bases de datos relacionales, como MySQL, ofrecen ventajas significativas, como la integridad de datos mediante la definición de restricciones como claves primarias y foráneas, la capacidad para realizar consultas complejas a través de SQL, y la normalización que reduce la redundancia de datos. Además, soportan transacciones ACID, lo que asegura operaciones confiables y consistentes.
 
-En el modelo de datos del proyecto, se definieron varias tablas clave: \textit{nodes}, \textit{measurements}, \textit{users} y \textit{organizations}. La tabla nodes gestiona la información de los nodos del sistema, incluyendo un identificador único, número de serie, descripción, modelo, y referencias a la organización a la que pertenecen. La tabla measurements almacena las mediciones asociadas a cada nodo, registrando el valor, el tipo de medición y la fecha y hora de la toma de datos. Por otro lado, la tabla users contiene la información de los usuarios del sistema, incluyendo nombre de usuario, contraseña (hashificada para seguridad), el identificador de la organización a la que pertenecen, y su rol. Finalmente, la tabla organizations define las organizaciones que gestionan los nodos y usuarios, proporcionando una estructura organizativa clara.
+En el modelo de datos del proyecto que se muestra en la Figura \ref{fig:db_diagram}, se definieron varias tablas clave: \textit{nodes}, \textit{measurements}, \textit{users} y \textit{organizations}. La tabla nodes gestiona la información de los nodos del sistema, incluyendo un identificador único, número de serie, descripción, modelo, y referencias a la organización a la que pertenecen. La tabla measurements almacena las mediciones asociadas a cada nodo, registrando el valor, el tipo de medición y la fecha y hora de la toma de datos. Por otro lado, la tabla users contiene la información de los usuarios del sistema, incluyendo nombre de usuario, contraseña (hashificada para seguridad), el identificador de la organización a la que pertenecen, y su rol. Finalmente, la tabla organizations define las organizaciones que gestionan los nodos y usuarios, proporcionando una estructura organizativa clara.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.2]{./Figures/PortalWeb/smartcompost_db.png}
-	\caption{Diagrama de Base de Datos}
+	\caption{Diagrama de Base de Datos.}
 	\label{fig:db_diagram}
 \end{figure}
 
@@ -734,11 +733,12 @@ Durante el desarrollo, se realizó un cambio de PostgreSQL a MySQL basándose en
 \subsection{Containerización}
 
 La containerización a través de \textit{Docker Compose} es un instrumento clave para garantizar la portabilidad y facilidad de despliegue. Al mantener todos los servicios en contenedores, se logra aislar cada componente del sistema, como son el servidor Nginx, el backend en Go, la base de datos MySQL, el frontend en React y el backoffice Grafana como se puede observar en el apéndice \ref{AppendixA}. Esta modularidad facilita la administración, ya que cada servicio tiene su propio contenedor y puede ser escalado o modificado independientemente de los demás. Además, de esta manera la containerización asegura que los entornos de desarrollo y producción sean idénticos, eliminando problemas derivados a raiz de diferencias entre ellos. 
+En la Figura \ref{fig:docker-compose} se presenta el modelo final de los containers utilizados para el desarrollo global del Portal Web.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.29]{./Figures/PortalWeb/docker-compose.png}
-	\caption{Orquestación de containers}
+	\caption{Orquestación de containers.}
 	\label{fig:docker-compose}
 \end{figure}
 
